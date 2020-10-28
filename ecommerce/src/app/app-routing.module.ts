@@ -4,7 +4,7 @@ import { RentalComponent } from './rental/rental.component';
 import { TempComponent } from './temp/temp.component';
 
 const routes: Routes = [{
-  path: '', component: RentalComponent
+   path: '', redirectTo:'/rentals', pathMatch:'full' 
 }
   ,
   {

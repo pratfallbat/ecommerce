@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { Rental } from '../rental';
 
 @Component({
@@ -8,6 +9,8 @@ import { Rental } from '../rental';
 })
 export class RentalListItemComponent implements OnInit {
   @Input() rental: Rental;
+  @Output() public rentId = new EventEmitter<number>();
+
   constructor() { 
     console.log(this.rental)
   }
@@ -15,5 +18,10 @@ export class RentalListItemComponent implements OnInit {
   ngOnInit() {
     console.log(this.rental)
   }
-
+  onClickChild(id) {
+    console.log('id freo rentak')
+    console.log(id)
+    this.rentId.emit(id);
+    
+  }
 }

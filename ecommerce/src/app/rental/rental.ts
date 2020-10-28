@@ -1,5 +1,5 @@
 export class Rental{
-    public id: number;
+    public id: string;
     public title: string;
     public city: string;
     public street: string;

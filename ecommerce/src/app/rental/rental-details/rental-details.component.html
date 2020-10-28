@@ -1,4 +1,4 @@
-<div class="card bwm-card" (click)="onClickChild(rental.id)">
+<div *ngIf="rental; else other_content" class="card bwm-card" >
   <img class="card-img-top" src="{{ rental.image}}" alt="">
   <div class="card-block">
     <h6 class="card-subtitle">{{rental.category}} &#183; New York</h6>
@@ -7,3 +7,4 @@
     <a href="#" class="card-link">{{rental.category}}</a>
   </div>
 </div>
+<ng-template #other_content>other content here...</ng-template>
