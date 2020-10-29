@@ -1,7 +1,7 @@
-<div class="card bwm-card" (click)="onClickChild(rental.id)">
+<div class="card bwm-card" (click)="onClickChild(rental._id)">
   <img class="card-img-top" src="{{ rental.image}}" alt="">
   <div class="card-block">
-    <h6 class="card-subtitle">{{rental.category}} &#183; New York</h6>
+    <h6 class="card-subtitle {{rental.category}} ">{{rental.shared? 'Shared':'Whole'}} {{rental.category}} &#183; New York</h6>
     <h4 class="card-title">{{ rental.title }}</h4>
     <p class="card-text">{{rental.dailyRate}}</p>
     <a href="#" class="card-link">{{rental.category}}</a>
