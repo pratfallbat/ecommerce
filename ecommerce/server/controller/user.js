@@ -38,12 +38,18 @@ exports.auth = function (req, res) {
                 ]
             });
         }
-        if (user.hasSamePassword(password)) { // return JWT token
+            if (user.hasSamePassword(password)) { // return JWT token
+console.log('*******************************************************************')
+                console.log(user)
+                console.log('________________________________________________________________________');
 
             const token = jwt.sign({
                 userId: user.id,
-                user: user.username
-            }, confg.SECRET, {expiresIn: '1h'});
+                user: user.email
+            }, confg.SECRET, { expiresIn: '1h' });
+            console.log('******************TOKEN*************************************************')
+            console.log(token)
+            console.log('________________________________________________________________________');
             return res.json(token);
 
         } else {

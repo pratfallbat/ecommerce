@@ -10,11 +10,12 @@ import { CommonModule } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import { NgPipesModule } from 'ngx-pipes';
 import { MapModule} from '../common/map/map.module';
+import { AuthGuard } from '../auth/shared/auth.guard';
 const routes: Routes = [{
   path: 'rentals', component: RentalComponent,
   children: [
       { path: '', component: RentalListComponent },
-      {path:':rentalId',component:RentalDetailsComponent}
+      {path:':rentalId',component:RentalDetailsComponent,canActivate:[AuthGuard]}
   ]
 }
   
