@@ -11,6 +11,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { NgPipesModule } from 'ngx-pipes';
 import { MapModule} from '../common/map/map.module';
 import { AuthGuard } from '../auth/shared/auth.guard';
+import { Daterangepicker } from 'ng2-daterangepicker';
+import { RentalDetailBookingComponent } from './rental-detail-booking/rental-detail-booking.component';
 const routes: Routes = [{
   path: 'rentals', component: RentalComponent,
   children: [
@@ -25,7 +27,8 @@ const routes: Routes = [{
         RentalComponent,
       RentalListComponent,
       RentalListItemComponent,
-      RentalDetailsComponent
+      RentalDetailsComponent,
+      RentalDetailBookingComponent
     ],
   imports: [
     MapModule,
@@ -33,7 +36,8 @@ const routes: Routes = [{
     NgPipesModule,
       BrowserModule, 
       CommonModule,
-      RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+      Daterangepicker
     ],
     providers: [RentalService]
   })
