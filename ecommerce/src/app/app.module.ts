@@ -4,24 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
-import { RentalComponent } from './rental/rental.component';
 import { TempComponent } from './temp/temp.component';
-import { RentalListComponent } from './rental/rental-list/rental-list.component';
-import { RentalListItemComponent } from './rental/rental-list-item/rental-list-item.component';
+
 import { RentalModule } from './rental/rental.module';
+import { AuthModule } from './auth/auth.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-
-    TempComponent,
-  
+    TempComponent  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RentalModule
+    RentalModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

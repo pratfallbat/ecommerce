@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { type } = require('os');
 const Schema = mongoose.Schema;
 
 const rentalSchema = new Schema({
@@ -11,7 +12,8 @@ const rentalSchema = new Schema({
     description: { type: String, required: true},
     dailyRate: Number,
     shared: Boolean,
-    createdAt:{type: Date,default:Date.now}
+    createdAt: { type: Date, default: Date.now },
+    user: { type: Schema.Types.ObjectId, ref: 'User' }
 })
 
 module.exports = mongoose.model('Rental', rentalSchema);
